@@ -1,0 +1,57 @@
+# RSheets Mark Request
+
+# Marked Questions
+
+These questions are listed in the spec, and you must fill them out
+to receive marks for the Design Questions.
+
+## Question 1:
+    Direct string parsing: Worse. 
+        Without a structured parser, testing, validation, and maintenance become difficult. 
+        The FromStr trait improves modularity and clarity (e.g., src/lib.rs:42).
+
+    Standalone parse function: Slightly worse. 
+        A function like parse_command() works, but lacks the ergonomic integration of .parse::<Command>().
+
+    Separate GetCommand/SetCommand structs: Worse. 
+        This increases boilerplate and fragments logic. The current enum with named fields 
+        (e.g., Command::Set in src/lib.rs:45) is more concise and maintainable.
+
+## Question 2:
+    Scalar: src/lib.rs:275
+
+    Vector: src/lib.rs:284
+
+    Matrix: src/lib.rs:291
+    They share range parsing and default value logic. Differences exist in how data is collected. 
+    A helper function like collect_cells() could reduce code repetition across cases.
+
+## Question 3:
+    CellArgument::MatrixList(Vec<Vec<Vec<CellValue>>>). Modify extract_variable (src/lib.rs:260) to 
+    support new range syntax (e.g., A1_B2;C1_D2). Adjust evaluation logic in evaluate_and_store() to 
+    handle the new structure during parsing and computation.
+
+## Question 4:
+    Arc<Mutex<HashMap<String, CellValue>>> (src/lib.rs:144): Ensures safe shared access across threads. 
+    Rust prevents data races by disallowing multiple mutable borrows.
+
+    tx.send(...) (src/lib.rs:507): Channels safely pass tasks to worker threads. 
+    Rust requires messages to be Send, avoiding unsynchronized data access.
+
+## Question 5:
+    Stage 5 update chain (A1 → B1 → C1):
+        On set A1 7, the key is read (src/lib.rs:472), expression updated (474), marked not ready (478), and sent (507). 
+        The worker thread evaluates it (217), stores the result (526), and updates status (529). 
+        Reverse dependencies are processed (533), triggering B1 and C1 reevaluation recursively. 
+        This ensures consistent state across dependent cells.
+# Questions to the Marker (OPTIONAL)
+
+Remember: you don't have to fill these out; but if
+you want to get feedback on a particular element of
+your code; you can!
+
+1.
+
+2.
+
+3.
