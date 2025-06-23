@@ -1,0 +1,57 @@
+# RSLogo Mark Request
+
+## Which stages are complete?
+
+Please mark stages that are complete with an [X].
+Stages that are partially complete should be marked with a [?].
+Stages that are not complete should be left blank (like [ ]).
+
+> [X] Stage 1 (Basic Scoring)
+> [X] Stage 2 (Modifiers)
+> [X] Stage 3 (Easy Jokers)
+> [X] Stage 4 (Medium Jokers)
+> [X] Stage 5 (Hard Jokers)
+
+## Design Excellence
+
+If you have completed a "design excellence" task, please write what
+the task was below (note, it MUST be on the list in the assignment or
+approved by COMP6991 staff).
+
+> Each module has a single responsibility—enhancement handling, hand evaluation, Wild card generation, and output formatting are clearly separated.
+>Uses combinatorial logic to evaluate all Wild substitutions and consistently selects the best possible hand.
+>The centralized apply_modifiers function makes it easy to add new Enhancement or Edition types without affecting other logic.
+>The --explain mode is clean and informative, showing step-by-step contributions to the score while preserving the original card appearance (including (Wild) tags).
+>Uses default fallbacks and immutable handling where appropriate, ensuring the system handles edge cases gracefully.
+>Leverages Rust iterators and avoids unnecessary cloning, making the implementation both clean and efficient.
+
+Please write a paragraph or two (max. 250 words) describing how your design was
+influenced by this challenge, with specific reference to sections of your code.
+If you completed the "Pull Request" design excellence, please just leave a link
+to your PR.
+
+>
+>
+>
+
+## Design Limitations
+
+If you made any design decisions which you now regret making; but don't to go back and change them,
+let us know here. You can make up your design marks by acknowledging up to 5 things you would do
+differently now.
+
+> - TODO
+
+## Questions to the marker
+
+If you want to let us know something else about your program, put it here!
+(Feel free to leave this blank)
+
+> TODO
+
+## Other Comments
+
+If you want to let us know something else about your program, put it here!
+(Feel free to leave this blank)
+
+> TODO
